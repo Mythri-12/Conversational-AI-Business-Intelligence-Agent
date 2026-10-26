@@ -1,0 +1,15 @@
+com\mru\bi\Dto$QueryResult.class
+com\mru\bi\QueryExecutor.class
+com\mru\bi\SqlValidator.class
+com\mru\bi\SqlValidator$UnsafeSqlException.class
+com\mru\bi\NlToSqlService.class
+com\mru\bi\BiAgentApplication.class
+com\mru\bi\ContextManager.class
+com\mru\bi\Dto$ChatRequest.class
+com\mru\bi\SchemaProvider.class
+com\mru\bi\ContextManager$Turn.class
+com\mru\bi\Dto$SqlPlan.class
+com\mru\bi\VisualizationSelector.class
+com\mru\bi\ChatController.class
+com\mru\bi\Dto$ChatResponse.class
+com\mru\bi\Dto.class
