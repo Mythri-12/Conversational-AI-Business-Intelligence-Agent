@@ -14,7 +14,8 @@ React (Vite) --/api/chat--> Spring Boot + Spring AI --> LLM (SQL)
 Requirements: JDK 17+, Maven, Node 18+, MySQL 8+, a free Gemini API key (get one at https://aistudio.google.com).
 
 1. **Database** — open `database/schema_and_seed.sql` in MySQL Workbench and run it. It creates `bi_demo`
-   (regions, products, customers, sales), 900 sample sales, and the read-only user `bi_readonly`.
+   (10 tables, 80 columns: regions, suppliers, products, customers, employees, marketing_campaigns, sales,
+   sale_returns, customer_feedback, sales_targets), 1,500 sample sales, and the read-only user `bi_readonly`.
 2. **Backend**
    ```
    cd backend
@@ -56,3 +57,11 @@ Gemini is the default; a commented Groq block is included as a backup (set `GROQ
 - Compare monthly sales by region
 - Display last quarter's revenue → then: *now break it down by region*
 - Show sales distribution by region
+- Which sales rep generated the most revenue?
+- Compare actual revenue against the monthly target for each region
+- What are the top return reasons, and which products are returned most?
+- Show average customer rating by product category
+- Revenue by marketing campaign channel
+- Which products are below their reorder level?
+- Revenue by customer segment and loyalty tier
+- Which supplier's products earn the highest profit margin?

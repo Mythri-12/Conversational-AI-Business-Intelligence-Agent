@@ -23,8 +23,15 @@ public class ChatController {
             return service.answer(session, req.message().strip());
         } catch (Exception e) {
             log.error("Chat request failed", e);
-            return Dto.ChatResponse.failure("The AI service did not respond. Check GEMINI_API_KEY and the database connection, then try again.");
+            return Dto.ChatResponse.failure("The AI service did not respond. Check GEMINI_API_KEY and the database connection, then try again. Cause: " + rootCause(e));
         }
+    }
+
+    /** Shortest useful description of what actually failed. */
+    private static String rootCause(Throwable t) {
+        while (t.getCause() != null && t.getCause() != t) t = t.getCause();
+        String msg = t.getMessage() == null ? "" : t.getMessage().replaceAll("\\s+", " ");
+        return t.getClass().getSimpleName() + (msg.isBlank() ? "" : ": " + (msg.length() > 300 ? msg.substring(0, 300) : msg));
     }
 
     @GetMapping("/health")

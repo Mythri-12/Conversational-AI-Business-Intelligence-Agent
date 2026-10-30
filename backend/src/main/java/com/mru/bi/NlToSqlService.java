@@ -23,6 +23,8 @@ public class NlToSqlService {
             - Give result columns short readable aliases (name, sales, revenue, region, month).
             - Group by month with DATE_FORMAT(sale_date, '%Y-%m') AS month and order it ascending.
             - Resolve relative periods (last quarter, this year) from today's date.
+            - Unless the user asks otherwise, count only sales with status = 'Completed' when reporting
+              sales, revenue or quantities (cancelled, returned and pending sales are excluded).
             - Return at most 100 rows unless the user asks for more.
             - sql: the query. reply: one friendly sentence describing the answer.
               chartHint: one of bar, line, pie, table.
